@@ -115,7 +115,7 @@ LightRPC.prototype.getServer = function(){
 	var server = net.createServer(function(c) {
 		var commandsCallback = function(cmd){
 			if(cmd.command === descrCmd){
-					c.write(self.descrStr);
+					c.write(self.descrStr);					
 			}
 			else if(!self.wrapper[cmd.command]){
 				c.write(command('error', {code: 'UNKNOWN_COMMAND'}));
